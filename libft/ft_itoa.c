@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:44:27 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/04 18:54:05 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/04 20:06:32 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,33 @@ static int	power_of_ten(int n)
 	return (i);
 }
 
+char	*itoa_buffer(int n)
+{
+	char *str;
+
+	if (n >= 0)
+		str = malloc(sizeof(char) * (power_of_ten(n) + 2));
+	else
+		str = malloc(sizeof(char) * (power_of_ten(n) + 3));
+	if (!str)
+		return (NULL);
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
 	int		i;
 
+	str = NULL;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	i = power_of_ten(n);
-	str = malloc(sizeof(char) * (i + 2));
+	str = itoa_buffer(n);
 	if (!str)
 		return (NULL);
 	if (n < 0)
 	{
-		free(str);
-		str = malloc(sizeof(char) * (i + 3));
 		str[0] = '-';
 		n = -n;
 		i++;
