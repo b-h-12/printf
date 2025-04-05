@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/05 14:58:43 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/05 16:36:36 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	put_format(char c, va_list args)
 {
 	int	i;
-	char	*str;
-	int	num;
+	void	*str;
+	unsigned long	ul;
 	
 	i = 0;
 	if (c == 'c')
@@ -33,7 +33,8 @@ int	put_format(char c, va_list args)
 	}
 	else if (c == 'p')
 	{
-		//TODO : Print in hexadecimal format
+		ul = va_arg(args, unsigned long);
+		ft_putnbr_hex_add(ul);
 	}
 }
 

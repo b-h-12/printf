@@ -25,6 +25,7 @@ int main()
 	*i = 0;
 	printf("%p \n", i);
 	printf("%ul \n", i);
+	printf("%X \n", 158);
 	ft_putnbr_hex_fd((unsigned long)i);
 	return 0;
 }
