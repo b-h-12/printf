@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:44:27 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/04 20:06:32 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/05 14:08:24 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	power_of_ten(int n)
 
 char	*itoa_buffer(int n)
 {
-	char *str;
+	char	*str;
 
 	if (n >= 0)
 		str = malloc(sizeof(char) * (power_of_ten(n) + 2));
