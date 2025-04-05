@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_hex.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/05 16:22:03 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/04/05 16:22:45 by bhamoum          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+void	ft_putnbr_hex(unsigned long nbr)
+{
+	int		i;
+	char	*base;
+
+	base = "0123456789abcdef";
+	if (nbr >= 16)
+	{
+		ft_putnbr_hex_fd(nbr / 16);
+		ft_putnbr_hex_fd(nbr % 16);
+	}
+	else
+	{
+		write(1, &base[nbr], 1);
+	}
+}
