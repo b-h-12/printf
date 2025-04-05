@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/05 14:43:34 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/05 14:58:43 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int	put_format(char c, va_list args)
 		ft_putstr_fd(str, 1);
 		i += ft_strlen(str);
 		free(str);
+	}
+	else if (c == 'p')
+	{
+		//TODO : Print in hexadecimal format
 	}
 }
 
