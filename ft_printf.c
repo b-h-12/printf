@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/05 16:36:36 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/05 18:53:27 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ int	put_format(char c, va_list args)
 	int	i;
 	void	*str;
 	unsigned long	ul;
+	int	nb;
+	unsigned int	u_nb;
 	
 	i = 0;
 	if (c == 'c')
 	{
-		ft_putchar_fd(va_arg(args, int), 1);
+		ft_putchar_fd(va_arg(args, char), 1);
 		i++;
 	}
 	else if (c == 's')
@@ -34,8 +36,53 @@ int	put_format(char c, va_list args)
 	else if (c == 'p')
 	{
 		ul = va_arg(args, unsigned long);
-		ft_putnbr_hex_add(ul);
+		ft_putnbr_hex_addr(ul);
+		i += ul / 16 + 3;
 	}
+	else if (c == 'd' || c == 'i')
+	{
+		nb = va_arg(args, int);
+		ft_putnbr_fd(nb, 1);
+		i += nb / 10 + 1;
+	}
+	else if (c == 'u')
+	{
+		u_nb = va_arg(args, unsigned int);
+		if (u_nb > INT_MAX)
+		{
+			ft_putnbr_fd(u_nb / 10, 1);
+			ft_putnbr_fd(u_nb % 10, 1);
+		}
+		else
+			ft_putnbr_fd(u_nb, 1);
+		i += u_nb / 10 + 1;
+	}
+	else if (c == 'x')
+	{
+		ul = va_arg(args, unsigned long);
+		ft_putnbr_hex_min(ul);
+		i += ul / 16 + 1;
+	}
+	else if (c == 'X')
+	{
+		ul = va_arg(args, unsigned long);
+		ft_putnbr_hex_maj(ul);
+		i += ul / 16 + 1;
+	}
+	else if (c == '%')
+	{
+		ft_putchar_fd('%', 1);
+		i++;
+	}
+}
+
+static int nb_arg(const char *format)
+{
+	int	i;
+	int	count;
+
+	if (!format)
+		return NULL;
 }
 
 int	ft_printf(const char *format, ...)
@@ -45,24 +92,6 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	va_start(args, format);
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			if (format[i] == 'd')
-				ft_putnbr(va_arg(args, int));
-			else if (format[i] == 's')
-				ft_putstr(va_arg(args, char *));
-			else if (format[i] == 'c')
-				ft_putchar(va_arg(args, int));
-			else if (format[i] == '%')
-				ft_putchar('%');
-		}
-		else
-			ft_putchar(format[i]);
-		i++;
-	}
 	va_end(args);
 	return (i);
 }
