@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 16:19:25 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/14 18:16:04 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,33 @@ static int nb_arg(const char *format)
 	while(format[i])
 	{
 		if (format[i] == '%')
+		{
+			count++;
+			if (format[i + 1] && format[i + 1] == '%')
+				i++;
+		}
 		i++;
 	}
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		i;
+	int		ret;
 
 	i = 0;
-	va_start(args, format);
+	ret = 0;
+	va_start(args, nb_arg(format));
+	while (format[i])
+	{
+		if (format[i] == '%' && format[i + 1])
+			ret += put_format(format[i++], args);
+		else
+			ft_putchar_fd(format[i], 1);
+		i++;
+	}
 	va_end(args);
-	return (i);
+	return (ret);
 }
