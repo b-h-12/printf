@@ -6,20 +6,16 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 16:15:39 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/14 16:19:25 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_format(char c, va_list args)
+static int	put_format(char c, va_list args)
 {
 	int	i;
-	void	*str;
-	unsigned long	ul;
-	int	nb;
-	unsigned int	u_nb;
-	
+
 	i = 0;
 	if (c == 'c')
 		i += put_format_char(args);
@@ -36,16 +32,13 @@ int	put_format(char c, va_list args)
 	else if (c == 'x')
 		i += put_format_hex_min(args);
 	else if (c == 'X')
-	{
-		ul = va_arg(args, unsigned long);
-		ft_putnbr_hex_maj(ul);
-		i += ul / 16 + 1;
-	}
+		i += put_format_hex_maj(args);
 	else if (c == '%')
 	{
 		ft_putchar_fd('%', 1);
 		i++;
 	}
+	return (i);
 }
 
 static int nb_arg(const char *format)
@@ -55,6 +48,13 @@ static int nb_arg(const char *format)
 
 	if (!format)
 		return NULL;
+	i = 0;
+	count = 0;
+	while(format[i])
+	{
+		if (format[i] == '%')
+		i++;
+	}
 }
 
 int	ft_printf(const char *format, ...)
