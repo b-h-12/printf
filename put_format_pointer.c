@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   put_format_pointer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 14:12:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:39:23 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/04/14 15:36:29 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/04/14 15:38:02 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_hex_min(unsigned long nbr);
-void	ft_putnbr_hex_maj(unsigned long nbr);
-void	ft_putnbr_hex_addr(unsigned long nbr);
-int	put_format_char(va_list args);
-int	put_format_str(va_list args);
-int	put_format_pointer(va_list args);
+int	put_format_pointer(va_list args)
+{
+	unsigned long	ul;
 
-#endif
+	ul = va_arg(args, unsigned long);
+	ft_putnbr_hex_addr(ul);
+	return ((ul / 16) + 3);
+}

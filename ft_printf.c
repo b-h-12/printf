@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:35:01 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/14 15:38:26 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,7 @@ int	put_format(char c, va_list args)
 	else if (c == 's')
 		i += put_format_str(args);
 	else if (c == 'p')
-	{
-		ul = va_arg(args, unsigned long);
-		ft_putnbr_hex_addr(ul);
-		i += ul / 16 + 3;
-	}
+		i += put_format_pointer(args);
 	else if (c == 'd' || c == 'i')
 	{
 		nb = va_arg(args, int);
