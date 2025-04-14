@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_format_char.c                                  :+:      :+:    :+:   */
+/*   put_format_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 15:25:16 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:32:28 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/04/14 15:30:20 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/04/14 15:30:58 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_format_char(va_list args)
+int	put_format_str(char *str)
 {
-	ft_putchar_fd(va_arg(args, char), 1);
-	return (1);
+	
 }

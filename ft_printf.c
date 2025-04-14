@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:28:58 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/14 15:32:26 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	put_format(char c, va_list args)
 	
 	i = 0;
 	if (c == 'c')
-		i += put_format_char(va_arg(args, char));
+		i += put_format_char(args);
 	else if (c == 's')
 	{
 		str = ft_strdup(va_arg(args, char *));
