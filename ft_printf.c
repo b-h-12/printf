@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:44:06 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/14 16:10:06 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,7 @@ int	put_format(char c, va_list args)
 		i += put_format_dec(args);
 	}
 	else if (c == 'u')
-	{
-		u_nb = va_arg(args, unsigned int);
-		if (u_nb > INT_MAX)
-		{
-			ft_putnbr_fd(u_nb / 10, 1);
-			ft_putnbr_fd(u_nb % 10, 1);
-		}
-		else
-			ft_putnbr_fd(u_nb, 1);
-		i += u_nb / 10 + 1;
-	}
+		i += put_format_unsigned(args);
 	else if (c == 'x')
 	{
 		ul = va_arg(args, unsigned long);
