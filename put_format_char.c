@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   put_format_char.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 14:12:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:28:56 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/04/14 15:25:16 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/04/14 15:29:00 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_hex_min(unsigned long nbr);
-void	ft_putnbr_hex_maj(unsigned long nbr);
-void	ft_putnbr_hex_addr(unsigned long nbr);
-int	put_format_char(char c);
-
-#endif
+int	put_format_char(char c)
+{
+	ft_putchar_fd(c, 1);
+	return (1);
+}
