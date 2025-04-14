@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   put_format_hex_min.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 14:12:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 16:15:48 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/04/14 16:13:58 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/04/14 16:15:12 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_hex_min(unsigned long nbr);
-void	ft_putnbr_hex_maj(unsigned long nbr);
-void	ft_putnbr_hex_addr(unsigned long nbr);
-int	put_format_char(va_list args);
-int	put_format_str(va_list args);
-int	put_format_pointer(va_list args);
-int	put_format_dec(va_list args);
-int	put_format_unsigned(va_list args);
 int	put_format_hex_min(va_list args)
-#endif
+{
+	unsigned long	ul;
+	
+	ul = va_arg(args, unsigned long);
+	ft_putnbr_hex_min(ul);
+	return ((ul / 16) + 1);
+}

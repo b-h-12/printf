@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 16:10:06 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/14 16:15:39 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ int	put_format(char c, va_list args)
 	else if (c == 'u')
 		i += put_format_unsigned(args);
 	else if (c == 'x')
-	{
-		ul = va_arg(args, unsigned long);
-		ft_putnbr_hex_min(ul);
-		i += ul / 16 + 1;
-	}
+		i += put_format_hex_min(args);
 	else if (c == 'X')
 	{
 		ul = va_arg(args, unsigned long);
