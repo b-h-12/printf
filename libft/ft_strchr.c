@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:21:39 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 18:01:43 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/15 14:34:30 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	
 	if (!s)
 		return (NULL);
 	c = c % 256;
