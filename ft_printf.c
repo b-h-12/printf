@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 18:22:13 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/15 16:58:55 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,4 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (ret);
-}
-
-int main()
-{
-	ft_printf("bonjour");
-	return 0;
 }
