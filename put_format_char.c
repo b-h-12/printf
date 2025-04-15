@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:25:16 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:32:28 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/15 16:00:46 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	put_format_char(va_list args)
 {
-	ft_putchar_fd(va_arg(args, char), 1);
+	ft_putchar_fd(va_arg(args, int), 1);
 	return (1);
 }
