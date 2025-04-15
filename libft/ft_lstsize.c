@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/31 13:37:25 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/31 13:37:51 by bhamoum          ###   ########.fr       */
+/*   Created: 2025/04/09 22:06:22 by bhamoum           #+#    #+#             */
+/*   Updated: 2025/04/14 15:08:43 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
+	int		i;
+	t_list	*l;
 
 	i = 0;
-	while (src[i] && i < n)
+	l = lst;
+	while (l)
 	{
-		dst[i] = src[i];
+		l = l->next;
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:22:50 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/03/31 13:23:54 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/14 18:02:00 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
-
+	
+	if (!s)
+		return (NULL);
+	c = c % 256;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
