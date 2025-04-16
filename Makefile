@@ -8,7 +8,7 @@ SRC = ft_printf.c \
 	  put_format_dec.c \
 	  put_format_unsigned.c \
 	  put_format_hex_min.c \
-	  put_format_hex_maj.c
+	  put_format_hex_maj.c \
 
 OBJ = $(SRC:.c=.o)
 
