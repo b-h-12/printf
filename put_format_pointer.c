@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:36:29 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:38:02 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/16 17:36:29 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	put_format_pointer(va_list args)
 {
-	unsigned long	ul;
+	long	l;
 
-	ul = va_arg(args, unsigned long);
-	ft_putnbr_hex_addr(ul);
-	return ((ul / 16) + 3);
+	l = va_arg(args, long);
+	if (l == 0)
+		return (0);
+	return (ft_putnbr_hex_addr(l));
 }

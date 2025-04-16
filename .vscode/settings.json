@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"libft.h": "c",
+		"ft_printf.h": "c",
+		"random": "c",
+		"stdarg.h": "c",
+		"iostream": "cpp"
+	}
+}

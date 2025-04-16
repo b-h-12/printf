@@ -1,0 +1,34 @@
+{
+    "tasks": [
+        {
+            "label": "Build ft_printf",
+            "type": "shell",
+            "command": "make",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile tester",
+            "type": "shell",
+            "command": "cc",
+            "args": [
+                /*"-Wall",
+                "-Wextra",
+                "-Werror",*/
+                "tester.c",
+                "-L./",
+                "-lftprintf"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        }
+    ],
+    "version": "2.0.0"
+}
