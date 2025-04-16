@@ -1,6 +1,7 @@
 NAME = libftprintf.a
 
 SRC = ft_printf.c \
+	  ft_putnbr_hex.c \
 	  put_format_char.c \
 	  put_format_str.c \
 	  put_format_pointer.c \
@@ -11,24 +12,19 @@ SRC = ft_printf.c \
 
 OBJ = $(SRC:.c=.o)
 
-LIBFT_DIR = ./libft
-LIBFT = $(LIBFT_DIR)/libft.a
-
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-$(NAME): $(OBJ) $(LIBFT)
-	cp $(LIBFT) ./
-	ar rcs $(NAME) $(OBJ) libft.a
-
-$(LIBFT):
-	make -C $(LIBFT_DIR)
+$(NAME): $(OBJ)
+	@make bonus -C ./libft/
+	cp libft/libft.a $(NAME)
+	ar rcs $(NAME) $(OBJ) $(LIBFT)
 
 all: $(NAME)
 
 clean:
+	@make clean -C ./libft/
 	rm -rf $(OBJ)
-	make clean -C $(LIBFT_DIR)
 
 fclean: clean
 	rm -rf $(NAME) libft.a
