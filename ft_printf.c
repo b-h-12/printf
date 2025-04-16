@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:11:32 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/16 16:35:32 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/16 16:53:41 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,7 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] && format[i + 1] == '%')
-		{
-			i++;
-			ret += put_format(format[i], args);
-		}
-		else if 
-		(format[i] == '%' && format[i + 1])
+		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
 			ret += put_format(format[i], args);
