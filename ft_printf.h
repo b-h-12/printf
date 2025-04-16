@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:12:34 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/16 18:01:45 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/16 18:21:52 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-int	ft_putnbr_hex_min(unsigned long nbr, int size);
-int	ft_putnbr_hex_maj(unsigned long nbr, int size);
-int	ft_putnbr_hex_addr(unsigned long nbr);
+void	ft_putnbr_hex_min(unsigned long nbr);
+void	ft_putnbr_hex_maj(unsigned long nbr);
+void	ft_putnbr_hex_addr(unsigned long nbr);
 int	put_format_char(va_list args);
 int	put_format_str(va_list args);
 int	put_format_pointer(va_list args);
