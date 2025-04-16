@@ -4,5 +4,5 @@
 
 int	main(void)
 {
-	ft_printf("%c %d %x \n", 'c', 159, 159);
+	ft_printf("%c %d %x %% \n", 'c', 159, 159);
 }
