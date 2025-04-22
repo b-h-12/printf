@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:13:58 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/16 18:18:49 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/22 15:15:36 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ int	put_format_hex_min(va_list args)
 	
 	ul = va_arg(args, unsigned long);
 	ft_putnbr_hex_min(ul);
-	return ((ul / 16) + 1);
+	return (ft_putnbr_hex_min(ul));
 }
