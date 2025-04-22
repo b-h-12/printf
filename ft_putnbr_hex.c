@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 16:22:03 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/22 18:01:06 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/22 18:11:18 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	ft_putnbr_hex_maj(unsigned int nbr)
 	return (hex_length(nbr));
 }
 
-static int	ft_putnbr_hex_addr_r(unsigned long nbr)
+int	ft_putnbr_hex_addr(unsigned long nbr)
 {
 	char	*base;
 
@@ -83,8 +83,8 @@ static int	ft_putnbr_hex_addr_r(unsigned long nbr)
 	}
 	if (nbr >= 16)
 	{
-		ft_putnbr_hex_addr_r(nbr / 16);
-		ft_putnbr_hex_addr_r(nbr % 16);
+		ft_putnbr_hex_addr(nbr / 16);
+		ft_putnbr_hex_addr(nbr % 16);
 	}
 	else
 	{
@@ -92,15 +92,3 @@ static int	ft_putnbr_hex_addr_r(unsigned long nbr)
 	}
 	return (hex_length(nbr));
 }
-
-int	ft_putnbr_hex_addr(unsigned long nbr)
-{
-	if (nbr == 0)
-	{
-		write(1, "(nil)", 1);
-		return (5);
-	}
-	write(1, "0x", 2);
-	return (ft_putnbr_hex_addr_r(nbr) + 2);
-}
-
