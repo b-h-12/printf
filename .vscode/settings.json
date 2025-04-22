@@ -4,6 +4,7 @@
 		"ft_printf.h": "c",
 		"random": "c",
 		"stdarg.h": "c",
-		"iostream": "cpp"
+		"iostream": "cpp",
+		"ostream": "cpp"
 	}
 }
