@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 16:22:03 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/22 18:11:18 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/22 18:59:46 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	hex_length(unsigned long nbr)
 {
 	int	len;
-	
+
 	if (nbr == 0)
 		return (1);
 	len = 0;

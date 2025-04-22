@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:45:24 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/22 16:49:15 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/22 19:02:48 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	put_nbr_unsigned_int(unsigned int n)
 {
+	char	c;
+
 	if (n >= 10)
 	{
 		put_nbr_unsigned_int(n / 10);
@@ -21,8 +23,6 @@ static void	put_nbr_unsigned_int(unsigned int n)
 	}
 	else
 	{
-		char	c;
-
 		c = n + '0';
 		write(1, &c, 1);
 	}
@@ -31,8 +31,8 @@ static void	put_nbr_unsigned_int(unsigned int n)
 int	put_format_unsigned(va_list args)
 {
 	unsigned int	ui;
-	int	len;
-	char	c;
+	int				len;
+	char			c;
 
 	ui = va_arg(args, unsigned int);
 	c = '0';
