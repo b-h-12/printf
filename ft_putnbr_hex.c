@@ -6,13 +6,13 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 16:22:03 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/22 16:55:33 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/22 17:02:16 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	hex_length(unsigned long nbr)
+static int	hex_length(unsigned int nbr)
 {
 	int	len;
 	
@@ -27,7 +27,7 @@ int	hex_length(unsigned long nbr)
 	return (len);
 }
 
-int	ft_putnbr_hex_min(unsigned long nbr)
+int	ft_putnbr_hex_min(unsigned int nbr)
 {
 	char	*base;
 
@@ -49,7 +49,7 @@ int	ft_putnbr_hex_min(unsigned long nbr)
 	return (hex_length(nbr));
 }
 
-int	ft_putnbr_hex_maj(unsigned long nbr)
+int	ft_putnbr_hex_maj(unsigned int nbr)
 {
 	char	*base;
 
