@@ -11,6 +11,7 @@ SRC = ft_printf.c \
 	  put_format_hex_maj.c \
 
 OBJ = $(SRC:.c=.o)
+LIBFT_DIR = libft/
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -23,7 +24,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	@make clean -C ./libft/
+	@make clean -C $(LIBFT_DIR)
 	rm -rf $(OBJ)
 
 fclean: clean
