@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 16:22:03 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/22 15:05:24 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/22 15:27:32 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ int	ft_putnbr_hex_maj(unsigned long nbr)
 
 int	ft_putnbr_hex_addr(unsigned long nbr)
 {
+	if (nbr == 0)
+	{
+		ft_putstr_fd("(nil)", 1);
+		return (5);
+	}
 	ft_putstr_fd("0x", 1);
 	ft_putnbr_hex_min(nbr);
 	return (hex_length(nbr) + 2 );
