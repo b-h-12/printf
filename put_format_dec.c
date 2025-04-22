@@ -6,7 +6,7 @@
 /*   By: bhamoum <bhamoum@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:40:39 by bhamoum           #+#    #+#             */
-/*   Updated: 2025/04/14 15:44:07 by bhamoum          ###   ########.fr       */
+/*   Updated: 2025/04/22 15:58:06 by bhamoum          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 int	put_format_dec(va_list args)
 {
 	int	nb;
+	int	len;
 
 	nb = va_arg(args, int);
 	ft_putnbr_fd(nb, 1);
-	return ((nb / 10) + 1);
+	while (len > 0)
+	{
+		nb /= 16;
+		len ++;
+	}
+	return (len);
 }
