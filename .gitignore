@@ -402,4 +402,5 @@ FodyWeavers.xsd
 libft/*
 *.out
 *.a
+*.o
 printfTester/*
